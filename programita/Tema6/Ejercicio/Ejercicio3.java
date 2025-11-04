@@ -1,8 +1,6 @@
 package Tema6.Ejercicio;
 
-import java.sql.Struct;
-
-public class Ejercicio2 {
+public class Ejercicio3 {
     public static void main(String[] args) {
         String numero = "";
         String palo;
@@ -11,17 +9,17 @@ public class Ejercicio2 {
         int numeroPalo = (int)(Math.random()*4)+1;
 
         switch (numeroCarta) {
+            case 10:
+                numero = "sota";
+                break;
             case 11:
-                numero = "J";
+                numero = "caballo";
                 break;
             case 12:
-                numero = "Q";
+                numero = "rey";
                 break;
-            case 13:
-                numero = "K";
-                break;
-            case 14:
-                numero = "A";
+            case 1:
+                numero = "as";
                 break;
             default:
                 numero = String.valueOf(numeroCarta);
@@ -30,16 +28,16 @@ public class Ejercicio2 {
 
         switch (numeroPalo) {
             case 1:
-                palo = "corazones";
+                palo = "copas";
                 break;
             case 2:
-                palo = "diamante";
+                palo = "bastos";
                 break;
             case 3:
-                palo = "picas";
+                palo = "espadas";
                 break;
             case 4:
-                palo = "treboles";
+                palo = "oros";
             break;
             default:
                 palo = String.valueOf(numeroPalo);
