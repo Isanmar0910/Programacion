@@ -8,6 +8,7 @@ public class Ejercicio13 {
 
         System.out.println("Piensa un numero del 1 al 100. Intentare adivinarlo en 5 intentos.");
         System.out.println("Pulsa INTRO cuando estes listo");
+        System.console().readLine();
         numero = (int)(Math.random()*100);
 
         do {
