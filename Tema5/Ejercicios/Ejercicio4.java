@@ -9,10 +9,13 @@ public class Ejercicio4 {
         do {
             System.out.print("Introduce el numero de la caja fuerte: ");
             clave = Integer.parseInt(System.console().readLine());
+
             oportunidades--;
+
             if (clave != N) {
                 System.out.println("Clave Incorrecta");
             }
+            
         } while (clave != N && oportunidades > 0);
 
         if (clave == N) {
