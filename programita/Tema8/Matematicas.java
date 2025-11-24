@@ -5,23 +5,28 @@ import java.util.Scanner;
 public class Matematicas {
     public static void main(String[] args) {
         int numero;
+        int temporal;
 
         Scanner sc = new Scanner(System.in);
 
         System.out.print("Introduce un numero: ");
         numero = sc.nextInt();
 
+        temporal = numero; 
+
         if (esCapicua(numero) == true) {
-            System.out.println("Es Capicua");
+            System.out.println("El numero " + numero + " es Capicua");
         } else {
-            System.out.println("No es capicua");
+            System.out.println("El numero " + numero + " no es Capicua");
         }
 
         if (esPrimo(numero) == true) {
-            System.out.println("Es Primo");
+            System.out.println("El numero " + numero + " es primo");
         } else {
-            System.out.println("No es Primo");
+            System.out.println("El numero " + numero + " no es primo");
         }
+
+        System.out.println("El siguiente numero primo mayor a  " +  temporal +  " es " + siguientePrimo(numero) );
 
     }
 
@@ -43,16 +48,26 @@ public class Matematicas {
     }
 
     public static boolean esPrimo (int numero) {
-        boolean nPrimo = true;
-        int contador = 2;
-
-        while (nPrimo && (contador != numero)) {
-            if (numero % contador == 0) {
-                nPrimo=false;
-                contador++;
+       
+        if (numero <2) {
+            return false;
+        }else {
+            for (int i = numero/2; i >=2 ; i--){
+                if (numero % i == 0) {
+                    return false;
+                }
             }
         }
 
-        return nPrimo;
+        return true;
+    }
+
+    public static int siguientePrimo (int numero) {
+        numero++;
+
+        while (!esPrimo(numero)) {
+            numero++;
+        }
+        return numero;
     }
 }
