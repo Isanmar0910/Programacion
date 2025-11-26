@@ -10,7 +10,9 @@ public class Ejercicio14 {
         totalNota = (int)(Math.random()*(28 - 4 + 1))+4;
 
         do {
-            nota = (int)(Math.random()*7)+1;
+            
+            for (int i=0 ; i<4  ; i++) {
+                nota = (int)(Math.random()*7)+1;
             
             switch (nota) {
                 case 1:
@@ -38,12 +40,11 @@ public class Ejercicio14 {
                 default:
                     break;
             }
-            
-            for (int i=0 ; i<1  ; i++) {
-                System.out.print(clave);
-                nNotas++;
+                System.out.print(" " + clave);
+                
             }
-            System.out.println("|");
+            nNotas++;
+            System.out.print("|");
         } while (nNotas != totalNota);
     }
 }
