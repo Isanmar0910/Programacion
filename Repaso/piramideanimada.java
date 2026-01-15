@@ -2,7 +2,7 @@ package Repaso;
 
 public class piramideanimada {
     public static void main(String[] args) throws InterruptedException {
-        int tamaño = 40;
+        int tamaño = 20;
         final int MINIMO = 3;
         final int MAXIMO = tamaño;
 
@@ -16,7 +16,7 @@ public class piramideanimada {
 
             do {
                 piramide(tamaño--);
-                Thread.sleep(24);
+                Thread.sleep(150);
                 limpiarPantalla();
             } while (tamaño != MINIMO);
 
