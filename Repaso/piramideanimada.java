@@ -1,4 +1,4 @@
-package Repaso;
+package repaso;
 
 public class piramideanimada {
     public static void main(String[] args) throws InterruptedException {
