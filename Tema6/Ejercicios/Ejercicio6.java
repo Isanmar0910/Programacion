@@ -22,9 +22,12 @@ public class Ejercicio6 {
         for (int i = 0; i < 15; i++) {
             System.out.printf("|%3d ", i);
         }
-       
+        
+        System.out.println("|");
 
-        System.out.println("-");
+        System.out.println("----------------------------------------------------------------------------");
+
+       
         for (int i = 0; i < 15; i++) {
             System.out.printf("|%3d ", numeros[i]);
         }
@@ -41,8 +44,14 @@ public class Ejercicio6 {
         for (int i = 0; i < 15; i++) {
             System.out.printf("|%3d ", i);
         }
+
+
         
-        System.out.println("-");
+       System.out.println("|");
+
+       System.out.println("----------------------------------------------------------------------------");
+
+
         for (int i = 0; i < 15; i++) {
             System.out.printf("|%3d ", numeros[i]);
         }
