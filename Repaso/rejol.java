@@ -2,48 +2,55 @@ package repaso;
 
 import java.util.Scanner;
 
-public class porro {
+public class rejol {
+
     public static void main(String[] args) {
-        int numero;
-        int eleccion;
+        int digito = 0;
+        int opcion;
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("**************************");
-        System.out.println("1) IMPRIMIR NUMERO");
-        System.out.println("2) SECUENCIA DE NUMEROS");
-        System.out.print("SELECCIONA UNA OPCION: ");
-        eleccion = sc.nextInt();
-        System.out.println("**************************");
+        System.out.println("""
+        **********************************************
+        *                                            *
+        *          NÚMEROS DIGITALES v1.0            *
+        *                                            *
+        **********************************************
+        *                                            *
+        *    [1] Mostrar secuencia (0 a N)           *
+        *    [2] Número específico                   *
+        *    [0] Salir                               *
+        *                                            *
+        **********************************************
+        """);
 
-        if (eleccion == 1) {
-            System.out.print("Introduce un numero del 1 al 9: ");
-            numero = sc.nextInt();
+        System.out.print("Opción: ");
+        opcion = sc.nextInt();
 
-            imprimirNumero(numero);
+        if (opcion == 1) {
+            System.out.print("Introduce un numero del 0 al 9:");
+            digito = sc.nextInt();
+            secuenciaNumeros(digito);
 
-        } else if (eleccion == 2) {
-            System.out.print("Introduce un numero del 1 al 9: ");
-            numero = sc.nextInt();
-
-            secuenciaNumeros(numero);
-
+        } else if (opcion == 2) {
+            System.out.print("Introduce un numero del 0 al 9:");
+            digito = sc.nextInt();
+            imprimirNumero(digito);
         }
 
     }
 
-    public static void imprimirNumero(int numero) {
-        boolean superior = false; // Barra superior
-        boolean superiorDerecha = false; // Barra superior derecha
-        boolean superiorIzquierda = false; // Barra superior derecha
-        boolean central = false; // Barra central
-        boolean inferiorIzquierda = false; // Barra inferior izquierda
-        boolean inferiorDerecha = false; // Barra inferior derecha
-        boolean inferior = false; // Barra inferior
+    public static void imprimirNumero(int digito) {
+        boolean superior = true; // Barra superior
+        boolean superiorDerecha = true; // Barra superior derecha
+        boolean superiorIzquierda = true; // Barra superior derecha
+        boolean central = true; // Barra central
+        boolean inferiorIzquierda = true; // Barra inferior izquierda
+        boolean inferiorDerecha = true; // Barra inferior derecha
+        boolean inferior = true; // Barra inferior
 
         for (int i = 0; i < 7; i++) {
-
-            switch (numero) {
+            switch (digito) {
                 case 1:
                     superior = false;
                     superiorDerecha = true;
@@ -123,7 +130,7 @@ public class porro {
                     central = true;
                     inferiorIzquierda = false;
                     inferiorDerecha = true;
-                    inferior = false;
+                    inferior = true;
                     break;
                 case 0:
                     superior = true;
@@ -159,26 +166,24 @@ public class porro {
             System.out.print((i == 6 && inferior == true) ? " *** " : "");
             System.out.print((i == 6 && inferior == false) ? "     " : "");
 
-            System.out.println("");
-
+            System.out.println();
         }
-        
     }
 
-    public static void secuenciaNumeros(int numero) {
-        boolean superior = false; // Barra superior
-        boolean superiorDerecha = false; // Barra superior derecha
-        boolean superiorIzquierda = false; // Barra superior derecha
-        boolean central = false; // Barra central
-        boolean inferiorIzquierda = false; // Barra inferior izquierda
-        boolean inferiorDerecha = false; // Barra inferior derecha
-        boolean inferior = false; // Barra inferior
+    public static void secuenciaNumeros(int digito) {
+        boolean superior = true; // Barra superior
+        boolean superiorDerecha = true; // Barra superior derecha
+        boolean superiorIzquierda = true; // Barra superior derecha
+        boolean central = true; // Barra central
+        boolean inferiorIzquierda = true; // Barra inferior izquierda
+        boolean inferiorDerecha = true; // Barra inferior derecha
+        boolean inferior = true; // Barra inferior
 
         for (int i = 0; i < 7; i++) {
 
-            for (int digito = 0; digito <= numero; digito++) {
+            for (int numero = 0; numero <= digito; numero++) {
 
-                switch (digito) {
+                switch (numero) {
                     case 1:
                         superior = false;
                         superiorDerecha = true;
@@ -258,7 +263,7 @@ public class porro {
                         central = true;
                         inferiorIzquierda = false;
                         inferiorDerecha = true;
-                        inferior = false;
+                        inferior = true;
                         break;
                     case 0:
                         superior = true;
@@ -299,6 +304,5 @@ public class porro {
             }
             System.out.println("");
         }
-
     }
 }

@@ -2,48 +2,40 @@ package repaso;
 
 import java.util.Scanner;
 
-public class porro {
+public class clokcloki {
+
     public static void main(String[] args) {
+
         int numero;
-        int eleccion;
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("**************************");
-        System.out.println("1) IMPRIMIR NUMERO");
-        System.out.println("2) SECUENCIA DE NUMEROS");
-        System.out.print("SELECCIONA UNA OPCION: ");
-        eleccion = sc.nextInt();
-        System.out.println("**************************");
+        System.out.print("introduce un numero del 0-9: ");
+        numero = sc.nextInt();
 
-        if (eleccion == 1) {
-            System.out.print("Introduce un numero del 1 al 9: ");
-            numero = sc.nextInt();
-
-            imprimirNumero(numero);
-
-        } else if (eleccion == 2) {
-            System.out.print("Introduce un numero del 1 al 9: ");
-            numero = sc.nextInt();
-
-            secuenciaNumeros(numero);
-
-        }
-
+        secuenciaNumero(numero);
     }
 
-    public static void imprimirNumero(int numero) {
-        boolean superior = false; // Barra superior
-        boolean superiorDerecha = false; // Barra superior derecha
-        boolean superiorIzquierda = false; // Barra superior derecha
-        boolean central = false; // Barra central
-        boolean inferiorIzquierda = false; // Barra inferior izquierda
-        boolean inferiorDerecha = false; // Barra inferior derecha
-        boolean inferior = false; // Barra inferior
+    public static void pintarNumero(int numero) {
+        boolean superior = true;
+        boolean superiorDerecha = true;
+        boolean superiorIzquierda = true;
+        boolean central = true;
+        boolean inferiorIzquierda = true;
+        boolean inferiorDerecha = true;
+        boolean inferior = true;
 
         for (int i = 0; i < 7; i++) {
-
             switch (numero) {
+                case 0:
+                    superior = true;
+                    superiorDerecha = true;
+                    superiorIzquierda = true;
+                    central = false;
+                    inferiorIzquierda = true;
+                    inferiorDerecha = true;
+                    inferior = true;
+                    break;
                 case 1:
                     superior = false;
                     superiorDerecha = true;
@@ -90,7 +82,7 @@ public class porro {
                     inferior = true;
                     break;
                 case 6:
-                    superior = true;
+                    superior = false;
                     superiorDerecha = false;
                     superiorIzquierda = true;
                     central = true;
@@ -125,17 +117,8 @@ public class porro {
                     inferiorDerecha = true;
                     inferior = false;
                     break;
-                case 0:
-                    superior = true;
-                    superiorDerecha = true;
-                    superiorIzquierda = true;
-                    central = false;
-                    inferiorIzquierda = true;
-                    inferiorDerecha = true;
-                    inferior = true;
-                    break;
                 default:
-                    break;
+                    throw new AssertionError();
             }
 
             System.out.print((i == 0 && superior == true) ? " *** " : "");
@@ -162,23 +145,30 @@ public class porro {
             System.out.println("");
 
         }
-        
+
     }
 
-    public static void secuenciaNumeros(int numero) {
-        boolean superior = false; // Barra superior
-        boolean superiorDerecha = false; // Barra superior derecha
-        boolean superiorIzquierda = false; // Barra superior derecha
-        boolean central = false; // Barra central
-        boolean inferiorIzquierda = false; // Barra inferior izquierda
-        boolean inferiorDerecha = false; // Barra inferior derecha
-        boolean inferior = false; // Barra inferior
+    public static void secuenciaNumero(int numero) {
+        boolean superior = true;
+        boolean superiorDerecha = true;
+        boolean superiorIzquierda = true;
+        boolean central = true;
+        boolean inferiorIzquierda = true;
+        boolean inferiorDerecha = true;
+        boolean inferior = true;
 
         for (int i = 0; i < 7; i++) {
-
-            for (int digito = 0; digito <= numero; digito++) {
-
-                switch (digito) {
+            for (int secuencia = 0; secuencia <= numero; secuencia++) {
+                switch (secuencia) {
+                    case 0:
+                        superior = true;
+                        superiorDerecha = true;
+                        superiorIzquierda = true;
+                        central = false;
+                        inferiorIzquierda = true;
+                        inferiorDerecha = true;
+                        inferior = true;
+                        break;
                     case 1:
                         superior = false;
                         superiorDerecha = true;
@@ -260,17 +250,8 @@ public class porro {
                         inferiorDerecha = true;
                         inferior = false;
                         break;
-                    case 0:
-                        superior = true;
-                        superiorDerecha = true;
-                        superiorIzquierda = true;
-                        central = false;
-                        inferiorIzquierda = true;
-                        inferiorDerecha = true;
-                        inferior = true;
-                        break;
                     default:
-                        break;
+                        throw new AssertionError();
                 }
 
                 System.out.print((i == 0 && superior == true) ? " *** " : "");
@@ -297,6 +278,7 @@ public class porro {
                 System.out.print("  ");
 
             }
+
             System.out.println("");
         }
 
