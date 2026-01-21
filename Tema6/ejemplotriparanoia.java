@@ -18,7 +18,6 @@ public class ejemplotriparanoia {
         System.out.print("Introduzca el elemento del 0 al 8: ");
         numero = sc.nextInt();
 
-        
-
+   
     }
 }
