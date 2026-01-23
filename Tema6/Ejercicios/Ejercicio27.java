@@ -50,6 +50,9 @@ public class Ejercicio27 {
                     tablero[y][x] = "*";
                     dibujarTablero(tablero);
                     throw new Exception();
+                }else if (x > 5 || y > 4) {
+                    System.out.println("Te has pasado de los limites, vuelve a intentarlo");
+                    dibujarTablero(tablero);
                 } else {
                     tablero[y][x] = "X";
                     dibujarTablero(tablero);
