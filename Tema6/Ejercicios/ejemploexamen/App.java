@@ -4,16 +4,15 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
-        
-        int elecMenu = 0;
 
+        int elecMenu;
         Scanner sc = new Scanner(System.in);
-        
-        
+
         String[] alumnos = new String[10];
+        double[] notas = new double[10];
 
-
-        System.out.println("╔═════════════════════════════════════╗\r\n" + //
+        do {
+             System.out.println("╔═════════════════════════════════════╗\r\n" + //
                         "║ GESTOR DE NOTAS DE CLASE            ║\r\n" + //
                         "╠═════════════════════════════════════╣\r\n" + //
                         "║ 1. Introducir alumnos y notas       ║\r\n" + //
@@ -27,16 +26,24 @@ public class App {
                         "║ 0. Salir                            ║\r\n" + //
                         "╚═════════════════════════════════════╝");
 
-        System.out.print("Selecciona que quieres hacer: ");
+            System.out.print("Selecciona que quieres hacer: ");
+            elecMenu = sc.nextInt();
+            sc.nextLine();
 
-        elecMenu  = sc.nextInt();
+            switch (elecMenu) {
+                case 1:
+                    Arrais.nombreAlumnos(alumnos, notas, sc);
+                    break;
+                case 2:
+                    Arrais.datosAlumn(alumnos, notas);
+                    break;
+                case 0:
+                    System.out.println("Saliendo del programa...");
+                    break;
+                default:
+                    System.out.println("Opción no válida");
+            }
 
-        switch (elecMenu) {
-            case 1:
-                Arrais.nombreAlumnos(alumnos);
-                break;
-            default:
-                throw new AssertionError();
-        }
+        } while (elecMenu != 0);
     }
 }
