@@ -9,15 +9,25 @@ public class caballos {
     double peso;
     int edad;
 
-    caballos (String nombre){
+    public caballos(String nombre, int edad, String sexo) {
         this.nombre = nombre;
+        this.edad = edad;
+        this.sexo = sexo;
     }
 
-    void trota() {
-        System.out.println("toctoc toc toctoc");
+    public void presentarse() {
+        System.out.println("Hola, me llamo " + nombre);
     }
 
-    
+    public void andar() {
+        System.out.println("Tocotoc tocotoc tocotoc");
+    }
 
-    
+    public void relinchar() {
+        System.out.println("Hiiiiiiieeeeee");
+    }
+
+    public void comer() {
+        System.out.println("Ñam ñam ñam");
+    }
 }
