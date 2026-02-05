@@ -1,0 +1,25 @@
+A continuacion tienes una lista en la que estan mezcladas varias clases con instancias
+de esas clases. Para ponerlo un poco más difícil, todos los elementos están escritos
+en minúscula. Di cuáles son las clases, cuáles las instancias, a qué clase pertenece
+cada una de estas instancias y cual es la jerarquía entre las clases: paula, goofy,
+gardfiel, perro, mineral, caballo, tom, silvestre, pirita, rocinante, milu,
+snoopy, gato, pluto, animal, javier, bucefalo, pegaso, ayudantedesantaclaus,
+cuarzo, laika, persona, patolucas.
+
+Animal (clase):
+    Perro (subclase): 
+        instancias: goofy, milu, snoopy, ayudantedesantaclaus, laika, pluto.
+    Gato (subclase):
+        instancias: gardfiel, silvestre, tom.
+    Caballo (subclase):
+        instancias: rocinante, bucefalo, pegaso.
+    Otros animales:
+        instancias: patolucas.
+
+
+Persona (clase):
+    instancias: paula, javier.
+
+
+Mineral (clase):
+    instancias: pirita, cuarzo.
