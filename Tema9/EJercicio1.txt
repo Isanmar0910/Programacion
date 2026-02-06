@@ -19,7 +19,7 @@ Animal (clase):
 
 Persona (clase):
     instancias: paula, javier.
-
+    
 
 Mineral (clase):
     instancias: pirita, cuarzo.
