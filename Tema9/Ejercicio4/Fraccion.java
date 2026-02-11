@@ -30,7 +30,7 @@ public class Fraccion {
     }
 
     public Fraccion simplifica(Fraccion frac) {
-        return frac;
+        return new Fraccion(this.numerador, denominador);
     }
 
     @Override
