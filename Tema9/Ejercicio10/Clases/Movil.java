@@ -1,19 +1,19 @@
-package Tema9.Ejercicio9.Clases;
+package Tema9.Ejercicio10.Clases;
 
-public class Terminal {
+public class Movil {
 
     private String telefono;
     private int tiempoLlamada;
-    
+    private String tarifa;
 
-    public Terminal(String telefono ) {
+    public Movil(String telefono, String tarifa) {
         this.telefono = telefono;
         this.tiempoLlamada = 0;
-       
+        this.tarifa = tarifa;
 
     }
 
-    public void llama(Terminal t, int segundos) {
+    public void llama(Movil t, int segundos) {
         if (segundos > 0) {
             this.tiempoLlamada += segundos;
             t.tiempoLlamada += segundos;
