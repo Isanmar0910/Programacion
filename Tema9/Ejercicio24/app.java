@@ -19,6 +19,8 @@ public class app {
         double pvent;
         int stock;
         int posicion = 0;
+        int nMercancia;
+        int temp;
 
         while (eleccion != 7) {
 
@@ -104,6 +106,85 @@ public class app {
                     }
 
                     break;
+                case 4:
+                    System.out.println("Modificacion de articulos");
+                    System.out.print("Selecciona el codigo del articulo que quieras modificar: ");
+                    codigo = sc.nextLine();
+
+                    for (int i = 0; i < articulo.length; i++) {
+                        if (articulo[i] != null && articulo[i].getCodigo().equals(codigo)) {
+
+                            System.out.print("\nDescripccion: ");
+                            desc = sc.nextLine();
+
+                            System.out.print("\nPrecio de compra: ");
+                            pComp = sc.nextDouble();
+                            sc.nextLine();
+
+                            System.out.print("\nPrecio de venta: ");
+                            pvent = sc.nextDouble();
+                            sc.nextLine();
+
+                            System.out.print("\nStock: ");
+                            stock = sc.nextInt();
+                            sc.nextLine();
+
+                            articulo[i] = new Gestismal(codigo, desc, pComp, pvent, stock);
+
+                        } else {
+                            System.out.println("no hay ningun articulo con ese codigo");
+                        }
+                    }
+
+                    break;
+
+                case 5:
+                    System.out.println("ENTRADA DE MERCANCIA");
+                    System.out.print("Selecciona el codigo del articulo: ");
+
+                    codigo = sc.nextLine();
+
+                    for (int i = 0; i < articulo.length; i++) {
+                        if (articulo[i] != null && articulo[i].getCodigo().equals(codigo)) {
+                            System.out.println("");
+                            System.out.println(articulo[i].toString());
+                            System.out.println("");
+
+                            System.out.print("Introduce el numero de mercancia que entra: ");
+                            nMercancia = sc.nextInt();
+
+                            temp = articulo[i].getStock();
+
+                            articulo[i].setStock(temp + nMercancia);
+                            System.out.println("\n------------------------");
+
+                        }
+                    }
+                    break;
+                case 6:
+                    System.out.println("SALIDA DE MERCANCIA");
+                    System.out.print("Selecciona el codigo del articulo: ");
+
+                    codigo = sc.nextLine();
+
+                    for (int i = 0; i < articulo.length; i++) {
+                        if (articulo[i] != null && articulo[i].getCodigo().equals(codigo)) {
+                            System.out.println("");
+                            System.out.println(articulo[i].toString());
+                            System.out.println("");
+
+                            System.out.print("Introduce el numero de mercancia que sale: ");
+                            nMercancia = sc.nextInt();
+
+                            temp = articulo[i].getStock();
+
+                            articulo[i].setStock(temp - nMercancia);
+                            System.out.println("\n------------------------");
+
+                        }
+                    }
+                    break;
+
                 default:
                     throw new AssertionError();
             }
