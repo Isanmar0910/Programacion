@@ -10,6 +10,13 @@ public class App {
 
         Gato[] gatos = new Gato[4];
 
+       
+
+        String nombre;
+        String color;
+        String raza;
+        
+
         System.out.println("Por favor, introduzca los datos de los gatos.");
 
         for (int i = 0; i < gatos.length; i++) {
@@ -17,15 +24,16 @@ public class App {
             System.out.println("Gato no " + (i + 1));
 
             System.out.print("Nombre: ");
-            String nombre = sc.nextLine();
+            nombre = sc.nextLine();
 
             System.out.print("Color: ");
-            String color = sc.nextLine();
+            color = sc.nextLine();
 
             System.out.print("Raza: ");
-            String raza = sc.nextLine();
+            raza = sc.nextLine();
 
             gatos[i] = new Gato(i + 1, nombre, color, raza);
+            gatos[i] = new Gato(2, "javi", "verde", "peru");
         }
 
         System.out.println("\nDatos de los gatos:");
