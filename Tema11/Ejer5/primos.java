@@ -6,13 +6,15 @@ import java.io.IOException;
 
 public class primos {
 
+    /*Comentario */
+    /*Comentario */
     public static void main(String[] args) {
         try {
             boolean esPrimo;
 
             FileWriter archivo = new FileWriter("primos.dat");
             BufferedWriter bw = new BufferedWriter(archivo);
-
+            /*Comentario */
             for (int numero = 2; numero <= 500; numero++) {
 
                 esPrimo = true;
@@ -28,7 +30,7 @@ public class primos {
                     bw.newLine();
                 }
             }
-
+/*Comentario */
             bw.close();
             System.out.println("Archivo primos.dat generado correctamente");
 
@@ -37,3 +39,4 @@ public class primos {
         }
     }
 }
+/*Comentario */
