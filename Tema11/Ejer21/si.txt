@@ -48,3 +48,5 @@ negro:black
 blanco:white
 papichulo:daddy
  papichulo:a
+papu
+papichuli
