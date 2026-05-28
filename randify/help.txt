@@ -1,0 +1,14 @@
+RANDIFY v1.0 - Herramienta de Gestion de Catálogo Musical
+
+USO:
+java Randify -- help
+java Randify <archivo> <comando> [argumentos ... ]
+
+COMANDOS DISPONIBLES:
+
+-- help                                             Muestra esta ayuda.
+-- list                                             Lista el catálogo completo.
+-- add "Titulo" "Artista" "Género" <seg>            Añade canción y actualiza archivo.
+-- generate <género> <minutos> "archivo.txt"        Genera playlist desde el catálogo.
+
+Ejemplo: java Randify mi_musica.csv -- generate Rock 30 "mix.txt"
